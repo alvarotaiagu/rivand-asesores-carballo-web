@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-16T15:19:43.436Z",
+ "fecha": "2026-09-16T15:26:08.633Z",
  "total": 52,
  "fallos": 0,
  "resultados": [
@@ -51,8 +51,12 @@
    "ok": true,
    "detalle": [
     {
-     "inicio": 143,
-     "dur": 174
+     "inicio": 366,
+     "dur": 279
+    },
+    {
+     "inicio": 782,
+     "dur": 62
     }
    ]
   },
@@ -107,21 +111,7 @@
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search_impl.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/log.js",
     "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
-    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
-    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=108186",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=109479",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=6333",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=5040",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24027!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=120121",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24028!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=92196",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=64271",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=65564",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=96156",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=97449",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=110772",
-    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=7626",
-    "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i31184!3i24027!1m4!1m3!1i16!2i31185!3i24027!1m4!1m3!1i16!2i31186!3i24027!1m4!1m3!1i16!2i31187!3i24027!1m4!1m3!1i16!2i31184!3i24028!1m4!1m3!1i16!2i31184!3i24029!1m4!1m3!1i16!2i31185!3i24028!1m4!1m3!1i16!2i31185!3i24029!1m4!1m3!1i16!2i31186!3i24028!1m4!1m3!1i16!2i31186!3i24029!1m4!1m3!1i16!2i31187!3i24028!1m4!1m3!1i16!2i31187!3i24029!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=84174"
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt"
    ]
   },
   {
@@ -197,8 +187,8 @@
    "prueba": "el marquee de trimestres se mueve",
    "ok": true,
    "detalle": {
-    "x1": "matrix(1, 0, 0, 1, -29.5237, 0)",
-    "x2": "matrix(1, 0, 0, 1, -48.6708, 0)"
+    "x1": "matrix(1, 0, 0, 1, -29.4012, 0)",
+    "x2": "matrix(1, 0, 0, 1, -47.6551, 0)"
    }
   },
   {
