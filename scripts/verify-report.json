@@ -1,0 +1,382 @@
+{
+ "fecha": "2026-09-16T15:19:43.436Z",
+ "total": 52,
+ "fallos": 0,
+ "resultados": [
+  {
+   "prueba": "carga sin errores de consola",
+   "ok": true,
+   "detalle": []
+  },
+  {
+   "prueba": "el dial del hero sigue el trimestre real (T3)",
+   "ok": true,
+   "detalle": "3"
+  },
+  {
+   "prueba": "la aguja encaja en la marca del trimestre",
+   "ok": true,
+   "detalle": {
+    "grados": 180,
+    "esperado": 180
+   }
+  },
+  {
+   "prueba": "la marca del trimestre se ilumina en cobre",
+   "ok": true,
+   "detalle": "3"
+  },
+  {
+   "prueba": "la etiqueta mono del trimestre se ilumina",
+   "ok": true,
+   "detalle": "3"
+  },
+  {
+   "prueba": "la cuenta atrás muestra un número de días",
+   "ok": true,
+   "detalle": "35"
+  },
+  {
+   "prueba": "la aguja gira sobre el centro del dial (no se sale del svg)",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "sin canvas en la página",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "tareas largas en la carga (informativo)",
+   "ok": true,
+   "detalle": [
+    {
+     "inicio": 143,
+     "dur": 174
+    }
+   ]
+  },
+  {
+   "prueba": "sin tareas largas durante el scroll (ni una por frame)",
+   "ok": true,
+   "detalle": []
+  },
+  {
+   "prueba": "el aviso de cookies aparece en la primera visita",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el botón cierra el aviso ([hidden] gana al display:flex)",
+   "ok": true,
+   "detalle": {
+    "hidden": true,
+    "display": "none",
+    "alto": 0
+   }
+  },
+  {
+   "prueba": "el aviso no vuelve tras aceptarlo",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "sin iframe de mapa antes del clic",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "sin peticiones a Google Maps antes del clic",
+   "ok": true,
+   "detalle": [
+    "https://www.google.com/maps?q=Rivand%20Asesores%2C%20R%C3%BAa%20Fomento%2021%2C%2015100%20Carballo%2C%20A%20Coru%C3%B1a&output=embed",
+    "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRivand+Asesores,+R%C3%BAa+Fomento+21,+15100+Carballo,+A+Coru%C3%B1a",
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&paint_origin=&libraries=geometry,search&v=weekly&loading=async&language=en_US&experimentation=allowed&callback=onApiLoad",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/geometry.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/main.js",
+    "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/common.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/util.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/map.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/controls.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/places_impl.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/places.js",
+    "https://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&1i7983199&2i6151070&2e1&3u16&4m2&1u697&2u435&5m6&1e0&5sen-US&6sus&10b1&12b1&14i47083502&8e1&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=42247",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/onion.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search_impl.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/log.js",
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=108186",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=109479",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=6333",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=5040",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24027!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=120121",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24028!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=92196",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=64271",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=65564",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=96156",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=97449",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=110772",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=7626",
+    "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i31184!3i24027!1m4!1m3!1i16!2i31185!3i24027!1m4!1m3!1i16!2i31186!3i24027!1m4!1m3!1i16!2i31187!3i24027!1m4!1m3!1i16!2i31184!3i24028!1m4!1m3!1i16!2i31184!3i24029!1m4!1m3!1i16!2i31185!3i24028!1m4!1m3!1i16!2i31185!3i24029!1m4!1m3!1i16!2i31186!3i24028!1m4!1m3!1i16!2i31186!3i24029!1m4!1m3!1i16!2i31187!3i24028!1m4!1m3!1i16!2i31187!3i24029!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=84174"
+   ]
+  },
+  {
+   "prueba": "tras el clic se inserta el iframe del mapa",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el embed no usa API key",
+   "ok": true,
+   "detalle": "https://www.google.com/maps?q=Rivand%20Asesores%2C%20R%C3%BAa%20Fomento%2021%2C%2015100%20Carballo%2C%20A%20Coru%C3%B1a&output=embed"
+  },
+  {
+   "prueba": "el embed apunta al nombre y la dirección reales",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "con reduced-motion la aguja aparece ya en su sitio",
+   "ok": true,
+   "detalle": {
+    "grados": 180,
+    "esperado": 180
+   }
+  },
+  {
+   "prueba": "con reduced-motion no queda nada invisible",
+   "ok": true,
+   "detalle": 0
+  },
+  {
+   "prueba": "con reduced-motion no se activa el smooth scroll",
+   "ok": true,
+   "detalle": "js"
+  },
+  {
+   "prueba": "el contador de servicios recorre 01..06",
+   "ok": true,
+   "detalle": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+   ]
+  },
+  {
+   "prueba": "el dial en miniatura ilumina el paso de cada tarjeta",
+   "ok": true,
+   "detalle": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "prueba": "la aguja del dial en miniatura avanza con cada tarjeta",
+   "ok": true,
+   "detalle": [
+    0,
+    36,
+    72,
+    108,
+    144,
+    180
+   ]
+  },
+  {
+   "prueba": "el marquee de trimestres se mueve",
+   "ok": true,
+   "detalle": {
+    "x1": "matrix(1, 0, 0, 1, -29.5237, 0)",
+    "x2": "matrix(1, 0, 0, 1, -48.6708, 0)"
+   }
+  },
+  {
+   "prueba": "el contador de valoración acaba en 5,0 (el dato real)",
+   "ok": true,
+   "detalle": "5,0"
+  },
+  {
+   "prueba": "el contador del teléfono acaba en el número real",
+   "ok": true,
+   "detalle": "981 32 95 64"
+  },
+  {
+   "prueba": "los CTA de WhatsApp llevan un marcador único y greppable",
+   "ok": true,
+   "detalle": [
+    "https://wa.me/34NUMERO-PENDIENTE",
+    "https://wa.me/34NUMERO-PENDIENTE",
+    "https://wa.me/34NUMERO-PENDIENTE",
+    "https://wa.me/34NUMERO-PENDIENTE"
+   ]
+  },
+  {
+   "prueba": "al pulsar WhatsApp se explica que el enlace está pendiente",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "los enlaces de teléfono usan el número real confirmado",
+   "ok": true,
+   "detalle": [
+    "tel:+34981329564",
+    "tel:+34981329564",
+    "tel:+34981329564",
+    "tel:+34981329564",
+    "tel:+34981329564"
+   ]
+  },
+  {
+   "prueba": "el menú móvil abre",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el menú móvil cierra al navegar",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el diálogo dlg-aviso abre",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el diálogo dlg-privacidad abre",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el diálogo dlg-cookies abre",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "a 400 px no hay scroll horizontal",
+   "ok": true,
+   "detalle": {
+    "ancho": 400,
+    "viewport": 400
+   }
+  },
+  {
+   "prueba": "a 400 px el dial se reduce pero cabe entero",
+   "ok": true,
+   "detalle": {
+    "izq": 20,
+    "der": 380,
+    "ancho": 360,
+    "vp": 400,
+    "contenidoDentro": true
+   }
+  },
+  {
+   "prueba": "nada del dial queda fuera de su viewBox (ni etiquetas ni marcas)",
+   "ok": true,
+   "detalle": {
+    "izq": 20,
+    "der": 380,
+    "ancho": 360,
+    "vp": 400,
+    "contenidoDentro": true
+   }
+  },
+  {
+   "prueba": "ningún elemento sin recortar se sale por los lados a 400 px",
+   "ok": true,
+   "detalle": []
+  },
+  {
+   "prueba": "sin JS no queda contenido oculto",
+   "ok": true,
+   "detalle": 0
+  },
+  {
+   "prueba": "sin JS siguen el teléfono y la dirección",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "los anillos de horario dibujan las bandas reales de apertura",
+   "ok": true,
+   "detalle": [
+    {
+     "banda": "9,13",
+     "dash": "31.415926535897928 157.07963267948963",
+     "off": "-70.68583470577033"
+    },
+    {
+     "banda": "15.5,19.5",
+     "dash": "31.415926535897928 157.07963267948963",
+     "off": "-121.73671532660448"
+    },
+    {
+     "banda": "9,14",
+     "dash": "39.269908169872416 149.22565104551515",
+     "off": "-70.68583470577033"
+    }
+   ]
+  },
+  {
+   "prueba": "se indica si está abierto o cerrado ahora mismo",
+   "ok": true,
+   "detalle": "Abierto ahora"
+  },
+  {
+   "prueba": "los marcadores de dato pendiente están a la vista",
+   "ok": true,
+   "detalle": 27
+  },
+  {
+   "prueba": "la valoración se muestra como 5,0 con 1 reseña",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "no se infla la reseña con lenguaje de prueba social masiva",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "no hay precios inventados",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "la dirección lleva la planta y la puerta",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "las fechas del calendario están marcadas para confirmar",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "la lista de servicios está marcada para confirmar",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "el logotipo se declara provisional",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "las fotos se declaran de ambiente, no del local",
+   "ok": true,
+   "detalle": null
+  }
+ ]
+}
