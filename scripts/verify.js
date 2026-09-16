@@ -380,10 +380,17 @@ function trimestreEsperado(ahora) {
     const texto = await page.textContent('body');
     const pendientes = await page.$$eval('.pend', e => e.map(x => x.textContent.trim()));
     ok('los marcadores de dato pendiente están a la vista', pendientes.length >= 12, pendientes.length);
-    ok('la valoración se muestra como 5,0 con 1 reseña',
-      /5,0/.test(texto) && /1\s*reseña/.test(texto));
-    ok('no se infla la reseña con lenguaje de prueba social masiva',
-      !/cientos de clientes satisfechos(?!»)/.test(texto.replace(/«cientos de clientes satisfechos»/g, '')));
+    ok('la valoración real 5,0 se muestra', /5,0/.test(texto));
+    ok('la reseña real se reproduce entera y literal',
+      /Acabo de cambiarme a esta gestoría/.test(texto) &&
+      /dedicándome tiempo y atención/.test(texto) &&
+      /Gracias Esther/.test(texto));
+    ok('la reseña lleva su autora y su fecha', /Ta Mi/.test(texto) && /octubre de 2025/.test(texto));
+    /* no se dice cuántas reseñas hay, pero tampoco se insinúa que sean muchas */
+    const inflado = texto.match(/(\d+|decenas|cientos|miles|muchos|multitud)\s+(de\s+)?(reseñas|opiniones|valoraciones|clientes)/gi) || [];
+    ok('no se declara ni se insinúa ningún número de reseñas', inflado.length === 0, inflado);
+    ok('sin lenguaje de prueba social masiva',
+      !/(nuestros|cientos de|miles de)\s+clientes\s+(satisfechos|contentos)/i.test(texto));
     ok('no hay precios inventados', !/\d+\s*€|\beuros\b/i.test(texto));
     ok('la dirección lleva la planta y la puerta', /Fomento, 21/.test(texto) && /2º puerta 4/.test(texto));
     ok('las fechas del calendario están marcadas para confirmar',

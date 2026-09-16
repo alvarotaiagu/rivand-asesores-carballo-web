@@ -24,11 +24,11 @@ python -m http.server 8971
 NODE_PATH=<ruta a node_modules con playwright> node scripts/verify.js
 ```
 
-**52/52 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
+**55/55 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
 la aguja encaja en el trimestre real, el aviso de cookies cierra de verdad, el mapa no se
 carga hasta pulsarlo, reduced-motion, el sticky-stack, los contadores, 400 px sin recortes
 ni scroll lateral, la página sin JS y la honestidad de los datos (sin precios, con la
-reseña sin inflar y con todos los marcadores de pendiente a la vista).
+reseña real reproducida literal, sin declarar ni insinuar ningún recuento, y con todos los marcadores de pendiente a la vista).
 
 ---
 
@@ -47,13 +47,12 @@ Nada de esto se ha inventado. Todo está en la página como marcador visible
 
 | Qué | Marcador |
 |---|---|
-| Nombre del asesor/a | `[NOMBRE DEL ASESOR/A PENDIENTE]` |
+| Nombre del asesor/a | `[NOMBRE DEL ASESOR/A PENDIENTE]` — **la reseña de Google dice «Gracias Esther»**, así que casi con seguridad es Esther, pero es la palabra de una clienta, no un dato dado por la asesoría. Falta el apellido y la confirmación. |
 | Titulación | `[TITULACIÓN PENDIENTE]` |
 | Nº de colegiado/a | `[Nº DE COLEGIADO/A PENDIENTE]` |
-| Años en activo | `[AÑOS DE ACTIVIDAD PENDIENTES]` |
+| Años en activo | `[AÑOS DE ACTIVIDAD PENDIENTES]` — la reseña habla de «sus 20 de experiencia en el sector» (entiéndase 20 años). Es de nuevo la clienta quien lo dice, no la asesoría: sin confirmar no se pone como dato del sitio. |
 | Idiomas de atención | `[IDIOMAS PENDIENTES]` |
 | Bio / presentación | `[BIO PENDIENTE]` |
-| Texto, autor/a y fecha de la reseña de Google | `[TEXTO DE LA RESEÑA PENDIENTE]`, `[AUTOR/A PENDIENTE]`, `[FECHA PENDIENTE]` |
 | Email de contacto | `[EMAIL PENDIENTE]` (pie y aviso legal) |
 | Alcance real de cada servicio | `[ALCANCE PENDIENTE]` ×6 |
 | Precios / tarifas | **No hay ninguno en la web.** No se ha puesto ni un «desde X €». |
@@ -83,23 +82,32 @@ Nada de esto se ha inventado. Todo está en la página como marcador visible
 
 Nombre, categoría, dirección completa **con planta y puerta** (Rúa Fomento, 21, 2º puerta 4,
 15100 Carballo), teléfono 981 32 95 64, horario completo (L–J 9:00–13:00 y 15:30–19:30 ·
-V 9:00–14:00 · S y D cerrado) y valoración **5,0 ★ con 1 reseña**.
+V 9:00–14:00 · S y D cerrado) valoración **5,0 ★** y la reseña publicada en Google (texto, autora y fecha).
 
 ---
 
-## Sobre la reseña: 5,0 con una sola valoración
+## Sobre las opiniones
 
-El encargo pedía tratar la cifra con honestidad y sin inflarla. Lo que hace la web:
+La sección muestra la **valoración real de Google (5,0 ★)** y **reproduce entera y literal**
+la reseña publicada, con su autora (*Ta Mi*) y su fecha.
 
-- Una única esfera con el **5,0** y, al lado, «**1** reseña» con el mismo peso visual.
-- Un párrafo que lo dice sin rodeos: *«Una sola valoración no es una prueba social: es una
-  persona que se tomó la molestia de escribir.»*
-- Enlace a la ficha pública de Google para que cualquiera compruebe la cifra.
-- En `schema.org`, `ratingCount: 1`. No se agrega, no se redondea, no se repite en otras
-  secciones y no aparece en el hero.
-- Una prueba automática falla si aparece lenguaje de prueba social masiva.
+**No se dice cuántas reseñas hay.** Por decisión del cliente, el recuento no se menciona:
+la sección ya no lo declara ni en el texto ni en la interfaz. Omitirlo no es faltar a la
+verdad; lo que no se hace en ningún caso es **insinuar que sean muchas**. No hay «nuestros
+clientes», ni «cientos de opiniones», ni plurales que sugieran volumen. Hay dos pruebas
+automáticas que fallan si alguna vez se cuela un número de reseñas o lenguaje de prueba
+social masiva.
 
----
+En `schema.org` el `aggregateRating` sigue con el `ratingCount` **real y exacto**: ese dato
+es para Google, tiene que ser cierto y ahí no se toca.
+
+La cita va **literal, con su errata incluida** («sus 20 de experiencia»): es lo que escribió
+la clienta y no se corrige ni se maquilla. Las comillas las pone el CSS, no el texto, para
+que el contenido siga siendo exactamente el original.
+
+**La fecha es aproximada.** Google mostraba «hace 11 meses» en la captura del 16-09-2026, de
+donde sale *octubre de 2025*. Puede bailar unas semanas; si quieres la fecha exacta, se ve
+abriendo la reseña en Google y es cambiar dos palabras en `index.html`.
 
 ## Sobre la fotografía — leer esto
 

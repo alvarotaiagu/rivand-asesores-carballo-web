@@ -1,6 +1,6 @@
 {
- "fecha": "2026-09-16T15:26:08.633Z",
- "total": 52,
+ "fecha": "2026-09-16T15:34:28.656Z",
+ "total": 55,
  "fallos": 0,
  "resultados": [
   {
@@ -51,12 +51,8 @@
    "ok": true,
    "detalle": [
     {
-     "inicio": 366,
-     "dur": 279
-    },
-    {
-     "inicio": 782,
-     "dur": 62
+     "inicio": 149,
+     "dur": 207
     }
    ]
   },
@@ -96,8 +92,8 @@
     "https://www.google.com/maps?q=Rivand%20Asesores%2C%20R%C3%BAa%20Fomento%2021%2C%2015100%20Carballo%2C%20A%20Coru%C3%B1a&output=embed",
     "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRivand+Asesores,+R%C3%BAa+Fomento+21,+15100+Carballo,+A+Coru%C3%B1a",
     "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&paint_origin=&libraries=geometry,search&v=weekly&loading=async&language=en_US&experimentation=allowed&callback=onApiLoad",
-    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/geometry.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/main.js",
     "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/common.js",
@@ -111,7 +107,21 @@
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search_impl.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/log.js",
     "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
-    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt"
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=108186",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=109479",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=6333",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=5040",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24027!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=120121",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24028!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=92196",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31187!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=64271",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24029!4i256!2m3!1e0!2sm!3i795561188!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=65564",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=96156",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24029!4i256!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=97449",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24028!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=110772",
+    "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24027!4i256!2m3!1e0!2sm!3i795561207!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=7626",
+    "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i31184!3i24027!1m4!1m3!1i16!2i31185!3i24027!1m4!1m3!1i16!2i31186!3i24027!1m4!1m3!1i16!2i31187!3i24027!1m4!1m3!1i16!2i31184!3i24028!1m4!1m3!1i16!2i31184!3i24029!1m4!1m3!1i16!2i31185!3i24028!1m4!1m3!1i16!2i31185!3i24029!1m4!1m3!1i16!2i31186!3i24028!1m4!1m3!1i16!2i31186!3i24029!1m4!1m3!1i16!2i31187!3i24028!1m4!1m3!1i16!2i31187!3i24029!2m3!1e0!2sm!3i795561224!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=84174"
    ]
   },
   {
@@ -187,8 +197,8 @@
    "prueba": "el marquee de trimestres se mueve",
    "ok": true,
    "detalle": {
-    "x1": "matrix(1, 0, 0, 1, -29.4012, 0)",
-    "x2": "matrix(1, 0, 0, 1, -47.6551, 0)"
+    "x1": "matrix(1, 0, 0, 1, -29.3809, 0)",
+    "x2": "matrix(1, 0, 0, 1, -47.9597, 0)"
    }
   },
   {
@@ -326,15 +336,30 @@
   {
    "prueba": "los marcadores de dato pendiente están a la vista",
    "ok": true,
-   "detalle": 27
+   "detalle": 24
   },
   {
-   "prueba": "la valoración se muestra como 5,0 con 1 reseña",
+   "prueba": "la valoración real 5,0 se muestra",
    "ok": true,
    "detalle": null
   },
   {
-   "prueba": "no se infla la reseña con lenguaje de prueba social masiva",
+   "prueba": "la reseña real se reproduce entera y literal",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "la reseña lleva su autora y su fecha",
+   "ok": true,
+   "detalle": null
+  },
+  {
+   "prueba": "no se declara ni se insinúa ningún número de reseñas",
+   "ok": true,
+   "detalle": []
+  },
+  {
+   "prueba": "sin lenguaje de prueba social masiva",
    "ok": true,
    "detalle": null
   },

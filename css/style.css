@@ -516,8 +516,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   color: var(--tinta-3);
 }
 .op-estrellas { margin: 0; color: var(--cobre); letter-spacing: 0.22em; font-size: 1.05rem; }
-.op-cuantas { margin: 0; font-size: 0.78rem; color: var(--tinta-3); letter-spacing: 0.12em; }
-.op-cuantas b { color: var(--tinta); font-weight: 500; }
+.op-enlace { margin: 0; font-size: 0.74rem; color: var(--tinta-3); letter-spacing: 0.04em; }
 .op-texto .eyebrow { color: var(--cobre-tinta); }
 .op-texto > p { color: var(--tinta-2); max-width: 58ch; }
 .op-cita {
@@ -526,9 +525,20 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   background: color-mix(in srgb, var(--cobre) 7%, transparent);
   border-radius: 0 10px 10px 0;
 }
-.op-cita p { margin: 0 0 0.9rem; }
-.op-cita footer { font-size: 0.72rem; color: var(--tinta-3); }
-.op-pie { font-size: 0.75rem; color: var(--tinta-3); margin: 0; line-height: 1.8; }
+.op-cita p {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1rem, 1.9vw, 1.12rem); line-height: 1.68;
+  color: var(--tinta-2);
+}
+/* las comillas las pone el diseño, no el texto: la cita queda literal */
+.op-cita p::before { content: "«"; }
+.op-cita p::after  { content: "»"; }
+.op-cita footer {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.9rem;
+  font-size: 0.72rem; color: var(--tinta-3);
+}
+.op-autor { color: var(--tinta); font-weight: 500; letter-spacing: 0.06em; }
+.op-meta { color: var(--cobre-tinta); letter-spacing: 0.08em; }
 
 /* ============================ CONTACTO ============================ */
 
