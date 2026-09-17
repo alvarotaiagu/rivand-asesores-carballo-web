@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-16T15:34:28.656Z",
+ "fecha": "2026-09-16T15:36:32.609Z",
  "total": 55,
  "fallos": 0,
  "resultados": [
@@ -51,8 +51,8 @@
    "ok": true,
    "detalle": [
     {
-     "inicio": 149,
-     "dur": 207
+     "inicio": 380,
+     "dur": 173
     }
    ]
   },
@@ -197,8 +197,8 @@
    "prueba": "el marquee de trimestres se mueve",
    "ok": true,
    "detalle": {
-    "x1": "matrix(1, 0, 0, 1, -29.3809, 0)",
-    "x2": "matrix(1, 0, 0, 1, -47.9597, 0)"
+    "x1": "matrix(1, 0, 0, 1, -29.5839, 0)",
+    "x2": "matrix(1, 0, 0, 1, -48.183, 0)"
    }
   },
   {
