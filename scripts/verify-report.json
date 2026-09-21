@@ -1,6 +1,6 @@
 {
- "fecha": "2026-09-21T13:26:12.831Z",
- "total": 68,
+ "fecha": "2026-09-21T14:24:00.317Z",
+ "total": 74,
  "fallos": 0,
  "resultados": [
   {
@@ -51,8 +51,8 @@
    "ok": true,
    "detalle": [
     {
-     "inicio": 238,
-     "dur": 146
+     "inicio": 134,
+     "dur": 143
     }
    ]
   },
@@ -92,8 +92,8 @@
     "https://www.google.com/maps?q=Rivand%20Asesores%2C%20R%C3%BAa%20Fomento%2021%2C%2015100%20Carballo%2C%20A%20Coru%C3%B1a&output=embed",
     "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRivand+Asesores,+R%C3%BAa+Fomento+21,+15100+Carballo,+A+Coru%C3%B1a",
     "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&paint_origin=&libraries=geometry,search&v=weekly&loading=async&language=en_US&experimentation=allowed&callback=onApiLoad",
-    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/geometry.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/search.js",
+    "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/geometry.js",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/main.js",
     "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/common.js",
@@ -108,6 +108,7 @@
     "https://maps.googleapis.com/maps-api-v3/api/js/66/4d/log.js",
     "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
     "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/InitMapsJwt",
+    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata",
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31186!3i24028!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=7286",
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24028!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=8579",
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31185!3i24027!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=36504",
@@ -120,8 +121,7 @@
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24029!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=113018",
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24028!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=9872",
     "https://www.google.com/maps/vt?pb=!1m5!1m4!1i16!2i31184!3i24027!4i256!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e0!5m1!1e3!23i47083502!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=37797",
-    "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i31184!3i24027!1m4!1m3!1i16!2i31185!3i24027!1m4!1m3!1i16!2i31186!3i24027!1m4!1m3!1i16!2i31187!3i24027!1m4!1m3!1i16!2i31184!3i24028!1m4!1m3!1i16!2i31184!3i24029!1m4!1m3!1i16!2i31185!3i24028!1m4!1m3!1i16!2i31185!3i24029!1m4!1m3!1i16!2i31186!3i24028!1m4!1m3!1i16!2i31186!3i24029!1m4!1m3!1i16!2i31187!3i24028!1m4!1m3!1i16!2i31187!3i24029!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=85158",
-    "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetPlaceWidgetMetadata"
+    "https://www.google.com/maps/vt?pb=!1m4!1m3!1i16!2i31184!3i24027!1m4!1m3!1i16!2i31185!3i24027!1m4!1m3!1i16!2i31186!3i24027!1m4!1m3!1i16!2i31187!3i24027!1m4!1m3!1i16!2i31184!3i24028!1m4!1m3!1i16!2i31184!3i24029!1m4!1m3!1i16!2i31185!3i24028!1m4!1m3!1i16!2i31185!3i24029!1m4!1m3!1i16!2i31186!3i24028!1m4!1m3!1i16!2i31186!3i24029!1m4!1m3!1i16!2i31187!3i24028!1m4!1m3!1i16!2i31187!3i24029!2m3!1e0!2sm!3i795561890!2m3!1e2!2sspotlit!5i1!3m13!2sen-US!3sUS!5e289!12m5!1e68!2m2!1sset!2sRoadmap!4e2!12m3!1e37!2m1!1ssmartmaps!4e3!12m2!5b1!6b1!27m14!299174093m13!14m12!1m8!1m2!1y5102246992798596967!2y9383293936796758237!2s%2Fg%2F11xgntx5g_!4m2!1x432113086!2x4208050734!15sgcid%3Atax_assessor!2b0!6b0!8b0&key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&token=85158"
    ]
   },
   {
@@ -197,8 +197,8 @@
    "prueba": "el marquee de trimestres se mueve",
    "ok": true,
    "detalle": {
-    "x1": "matrix(1, 0, 0, 1, -42.2337, 0)",
-    "x2": "matrix(1, 0, 0, 1, -61.1577, 0)"
+    "x1": "matrix(1, 0, 0, 1, -28.4469, 0)",
+    "x2": "matrix(1, 0, 0, 1, -47.0663, 0)"
    }
   },
   {
@@ -331,7 +331,7 @@
   {
    "prueba": "se indica si está abierto o cerrado ahora mismo",
    "ok": true,
-   "detalle": "Cerrado ahora"
+   "detalle": "Abierto ahora"
   },
   {
    "prueba": "los marcadores de dato pendiente están a la vista",
@@ -401,7 +401,10 @@
     "pressed": "true",
     "clase": "js gsap lenis",
     "cobre": "#C4585C",
-    "noche": "#5C1114"
+    "noche": "#5C1114",
+    "crema": "#FFFFFF",
+    "papel": "#F2F0EA",
+    "bodyBg": "rgb(255, 255, 255)"
    }
   },
   {
@@ -412,7 +415,10 @@
     "pressed": "true",
     "clase": "js gsap lenis",
     "cobre": "#C4585C",
-    "noche": "#5C1114"
+    "noche": "#5C1114",
+    "crema": "#FFFFFF",
+    "papel": "#F2F0EA",
+    "bodyBg": "rgb(255, 255, 255)"
    }
   },
   {
@@ -426,11 +432,34 @@
    "detalle": "#5C1114"
   },
   {
+   "prueba": "el papel por defecto (--crema) es el blanco real de Dourado & Fernández, no el crema nativo",
+   "ok": true,
+   "detalle": "#FFFFFF"
+  },
+  {
+   "prueba": "el fondo del <body> se pinta en blanco puro nada más cargar (sin localStorage)",
+   "ok": true,
+   "detalle": "rgb(255, 255, 255)"
+  },
+  {
    "prueba": "al pulsar «Cobre» (paleta nativa) cambia la clase y el color de marca (--cobre) computado",
    "ok": true,
    "detalle": {
     "clase": "js gsap lenis paleta-original",
     "cobre": "#C08552",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
+    "guardado": "original"
+   }
+  },
+  {
+   "prueba": "«Cobre» recupera el papel crema nativo de «Cuenta atrás» (#F3EEE4), no el blanco de Dourado",
+   "ok": true,
+   "detalle": {
+    "clase": "js gsap lenis paleta-original",
+    "cobre": "#C08552",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
     "guardado": "original"
    }
   },
@@ -450,6 +479,19 @@
    "detalle": {
     "clase": "js gsap lenis paleta-granate",
     "cobre": "#C77165",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
+    "guardado": "granate"
+   }
+  },
+  {
+   "prueba": "«Granate» se queda en el papel crema nativo (no hereda el blanco de Dourado del bare :root)",
+   "ok": true,
+   "detalle": {
+    "clase": "js gsap lenis paleta-granate",
+    "cobre": "#C77165",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
     "guardado": "granate"
    }
   },
@@ -459,6 +501,19 @@
    "detalle": {
     "clase": "js gsap lenis paleta-botella",
     "cobre": "#619978",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
+    "guardado": "botella"
+   }
+  },
+  {
+   "prueba": "«Verde botella» también se queda en el papel crema nativo, no en el blanco de Dourado",
+   "ok": true,
+   "detalle": {
+    "clase": "js gsap lenis paleta-botella",
+    "cobre": "#619978",
+    "crema": "#F3EEE4",
+    "bodyBg": "rgb(243, 238, 228)",
     "guardado": "botella"
    }
   },
@@ -468,6 +523,19 @@
    "detalle": {
     "clase": "js gsap lenis",
     "cobre": "#C4585C",
+    "crema": "#FFFFFF",
+    "bodyBg": "rgb(255, 255, 255)",
+    "guardado": "burdeos"
+   }
+  },
+  {
+   "prueba": "volver a «Burdeos» recupera también el blanco puro de Dourado & Fernández",
+   "ok": true,
+   "detalle": {
+    "clase": "js gsap lenis",
+    "cobre": "#C4585C",
+    "crema": "#FFFFFF",
+    "bodyBg": "rgb(255, 255, 255)",
     "guardado": "burdeos"
    }
   },

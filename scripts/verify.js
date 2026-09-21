@@ -416,7 +416,10 @@ function trimestreEsperado(ahora) {
         pressed: caja && document.getElementById('paleta-burdeos').getAttribute('aria-pressed'),
         clase: document.documentElement.className,
         cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
-        noche: getComputedStyle(document.documentElement).getPropertyValue('--noche').trim()
+        noche: getComputedStyle(document.documentElement).getPropertyValue('--noche').trim(),
+        crema: getComputedStyle(document.documentElement).getPropertyValue('--crema').trim(),
+        papel: getComputedStyle(document.documentElement).getPropertyValue('--papel').trim(),
+        bodyBg: getComputedStyle(document.body).backgroundColor
       };
     });
     ok('el control de paleta se muestra con JS', inicial.visible, inicial);
@@ -426,17 +429,26 @@ function trimestreEsperado(ahora) {
       inicial.cobre.toLowerCase() === '#c4585c', inicial.cobre);
     ok('el fondo oscuro por defecto (--noche) es el de Dourado & Fernández',
       inicial.noche.toLowerCase() === '#5c1114', inicial.noche);
+    ok('el papel por defecto (--crema) es el blanco real de Dourado & Fernández, no el crema nativo',
+      inicial.crema.toLowerCase() === '#ffffff', inicial.crema);
+    ok('el fondo del <body> se pinta en blanco puro nada más cargar (sin localStorage)',
+      inicial.bodyBg === 'rgb(255, 255, 255)', inicial.bodyBg);
 
     await page.locator('#paleta-original').click();
     await page.waitForTimeout(150);
     const trasOriginal = await page.evaluate(() => ({
       clase: document.documentElement.className,
       cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      crema: getComputedStyle(document.documentElement).getPropertyValue('--crema').trim(),
+      bodyBg: getComputedStyle(document.body).backgroundColor,
       guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
     }));
     ok('al pulsar «Cobre» (paleta nativa) cambia la clase y el color de marca (--cobre) computado',
       /paleta-original/.test(trasOriginal.clase) && trasOriginal.cobre.toLowerCase() === '#c08552' &&
       trasOriginal.cobre.toLowerCase() !== inicial.cobre.toLowerCase(),
+      trasOriginal);
+    ok('«Cobre» recupera el papel crema nativo de «Cuenta atrás» (#F3EEE4), no el blanco de Dourado',
+      trasOriginal.crema.toLowerCase() === '#f3eee4' && trasOriginal.bodyBg === 'rgb(243, 238, 228)',
       trasOriginal);
     ok('la elección de paleta se guarda en localStorage', trasOriginal.guardado === 'original', trasOriginal.guardado);
 
@@ -449,11 +461,16 @@ function trimestreEsperado(ahora) {
     const trasGranate = await page.evaluate(() => ({
       clase: document.documentElement.className,
       cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      crema: getComputedStyle(document.documentElement).getPropertyValue('--crema').trim(),
+      bodyBg: getComputedStyle(document.body).backgroundColor,
       guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
     }));
     ok('al pulsar «Granate» cambia la clase y el color de marca (--cobre) computado',
       /paleta-granate/.test(trasGranate.clase) && !/paleta-original/.test(trasGranate.clase) &&
       trasGranate.cobre.toLowerCase() !== trasOriginal.cobre.toLowerCase(),
+      trasGranate);
+    ok('«Granate» se queda en el papel crema nativo (no hereda el blanco de Dourado del bare :root)',
+      trasGranate.crema.toLowerCase() === '#f3eee4' && trasGranate.bodyBg === 'rgb(243, 238, 228)',
       trasGranate);
 
     await page.locator('#paleta-botella').click();
@@ -461,11 +478,16 @@ function trimestreEsperado(ahora) {
     const trasBotella = await page.evaluate(() => ({
       clase: document.documentElement.className,
       cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      crema: getComputedStyle(document.documentElement).getPropertyValue('--crema').trim(),
+      bodyBg: getComputedStyle(document.body).backgroundColor,
       guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
     }));
     ok('«Verde botella» también cambia clase, color computado y localStorage',
       /paleta-botella/.test(trasBotella.clase) && !/paleta-granate/.test(trasBotella.clase) &&
       trasBotella.cobre.toLowerCase() !== trasGranate.cobre.toLowerCase() && trasBotella.guardado === 'botella',
+      trasBotella);
+    ok('«Verde botella» también se queda en el papel crema nativo, no en el blanco de Dourado',
+      trasBotella.crema.toLowerCase() === '#f3eee4' && trasBotella.bodyBg === 'rgb(243, 238, 228)',
       trasBotella);
     await page.screenshot({ path: path.join(CAPS, 'paleta-botella.png') });
 
@@ -474,11 +496,16 @@ function trimestreEsperado(ahora) {
     const trasBurdeos = await page.evaluate(() => ({
       clase: document.documentElement.className,
       cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      crema: getComputedStyle(document.documentElement).getPropertyValue('--crema').trim(),
+      bodyBg: getComputedStyle(document.body).backgroundColor,
       guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
     }));
     ok('volver a «Burdeos» quita las tres clases de paleta y recupera el rojo por defecto',
       !/paleta-(original|granate|botella)/.test(trasBurdeos.clase) &&
       trasBurdeos.cobre.toLowerCase() === inicial.cobre.toLowerCase() && trasBurdeos.guardado === 'burdeos',
+      trasBurdeos);
+    ok('volver a «Burdeos» recupera también el blanco puro de Dourado & Fernández',
+      trasBurdeos.crema.toLowerCase() === '#ffffff' && trasBurdeos.bodyBg === 'rgb(255, 255, 255)',
       trasBurdeos);
 
     ok('sin errores de consola durante el cambio de paleta', page.errores.length === 0, page.errores);

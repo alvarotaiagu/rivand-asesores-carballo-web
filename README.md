@@ -24,7 +24,7 @@ python -m http.server 8971
 NODE_PATH=<ruta a node_modules con playwright> node scripts/verify.js
 ```
 
-**68/68 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
+**74/74 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
 la aguja encaja en el trimestre real, el aviso de cookies cierra de verdad, el mapa no se
 carga hasta pulsarlo, reduced-motion, el sticky-stack, los contadores, 400 px sin recortes
 ni scroll lateral, la página sin JS, la honestidad de los datos (sin precios, con la
@@ -43,30 +43,41 @@ por email a Dourado & Fernández para que elijan **estructura**, no color — as
 dejó de ser una variable y el **rojo real de Dourado & Fernández pasó a ser el default** en
 las siete, esta incluida, para que abran ya en el color que el cliente ya usa en su propia
 web (`--verde`/`--oro`/`--oro-tinta` de `dourado-fernandez-asesores-carballo-web`). El cobre
-nativo de «Cuenta atrás» no desaparece: sigue siendo una opción más del mando.
+nativo de «Cuenta atrás» no desaparece: sigue siendo una opción más del mando. Más tarde ese
+mismo día, Alvaro señaló que la web real de Dourado & Fernández también tiene el **papel en
+blanco puro** (`--crema: #FFFFFF`), no el crema cálido propio de «Cuenta atrás» — y como el
+objetivo del default es una vista previa fiel para el email comparativo, no solo el acento,
+el fondo también pasó a blanco (`--papel` reutiliza el `#F2F0EA` exacto de la franja secundaria
+casi-blanca de esa misma web). Las otras tres paletas (Cobre/Granate/Verde botella) se quedan
+en el crema cálido nativo: no son una réplica de ningún sitio ajeno.
 
 La píldora de abajo a la izquierda (`#paleta`) cambia en vivo entre cuatro paletas:
 
 | Botón | Paleta | Nota |
 |---|---|---|
-| **Burdeos** | **El default** (sin clase `paleta-*`, es el `:root` de base). El rojo real de Dourado & Fernández: `--noche` casi negro-granate + `--cobre` rojo saturado + `--salvia` derivado del mismo rojo. |
-| **Cobre** | La paleta nativa de «Cuenta atrás» — azul noche + cobre + salvia —, reubicada en `html.paleta-original`. |
-| **Granate** | Vino/granate sobre un fondo casi negro con un punto de rojo, con un dorado apagado como acento secundario (registro de sello y pan de oro). |
-| **Verde botella** | Verde ledger sobre un fondo casi negro con un punto de verde, con un terracota apagado como acento secundario. |
+| **Burdeos** | **El default** (sin clase `paleta-*`, es el `:root` de base). El rojo real de Dourado & Fernández: `--noche` casi negro-granate + `--cobre` rojo saturado + `--salvia` derivado del mismo rojo, **sobre su papel real** (`--crema: #FFFFFF`, `--papel: #F2F0EA`). |
+| **Cobre** | La paleta nativa de «Cuenta atrás» — azul noche + cobre + salvia sobre el crema cálido nativo (`--crema: #F3EEE4`) —, reubicada en `html.paleta-original`. |
+| **Granate** | Vino/granate sobre un fondo casi negro con un punto de rojo, con un dorado apagado como acento secundario (registro de sello y pan de oro), sobre el mismo crema cálido nativo. |
+| **Verde botella** | Verde ledger sobre un fondo casi negro con un punto de verde, con un terracota apagado como acento secundario, sobre el mismo crema cálido nativo. |
 
-Solo cambian el **color de marca**: `--noche`/`--noche-2`/`--noche-3` (el fondo oscuro
+Cambian el **color de marca**: `--noche`/`--noche-2`/`--noche-3` (el fondo oscuro
 estructural — se redefine junto al acento porque en «Cuenta atrás» el cobre es la aguja
 sobre un cielo nocturno, y un acento granate o verde pintado sobre un azul noche desentonaría)
 y `--cobre`/`--cobre-claro`/`--cobre-tinta`/`--salvia`/`--salvia-claro`/`--salvia-tinta`. La
-tinta, el papel (`--crema`, `--crema-2`, `--papel`) y el resto de variables estructurales son
-los mismos en las cuatro, para que el texto siga siendo legible en cualquiera. Los contrastes de las dos paletas de demostración (granate/botella) se calcularon con la
+tinta y el resto de variables estructurales son las mismas en las cuatro, para que el texto
+siga siendo legible en cualquiera. El **papel** (`--crema`, `--crema-2`, `--papel`) es la
+excepción: Burdeos lo lleva en blanco puro (el papel real de Dourado & Fernández, no una
+aproximación), mientras que Cobre/Granate/Verde botella comparten el crema cálido propio de
+«Cuenta atrás» — así que solo el default reproduce el sitio del cliente de verdad, acento y
+papel juntos, y las otras tres opciones del mando siguen siendo la identidad nativa de la
+plantilla. Los contrastes de las dos paletas de demostración (granate/botella) se calcularon con la
 fórmula de luminancia relativa WCAG (no a ojo) para igualar o mejorar los de la paleta nativa:
 `--cobre-tinta` sobre `--crema` ≥5,1:1, `--salvia-claro` sobre `--noche` ≥5,8:1, `--salvia-tinta`
 sobre `--crema` ≥5,5:1. El rojo de Dourado & Fernández usa sus propios hex reales (no se
-inventaron), verificados igual: `--cobre-tinta` ≈9,4:1 y `--salvia-tinta` ≈8,6:1 sobre
-`--crema` (mejor que la paleta nativa), y `--salvia-claro` ≈4,7:1 sobre `--noche` (algo por
-debajo de las otras paletas — `--salvia` ahí es un acento secundario de uso ligero, no texto
-de cuerpo).
+inventaron), verificados igual sobre su propio papel blanco: `--cobre-tinta` ≈10,8:1 y
+`--salvia-tinta` ≈10:1 sobre `--crema` (mejor todavía que sobre el crema cálido nativo), y
+`--salvia-claro` ≈4,7:1 sobre `--noche` (algo por debajo de las otras paletas — `--salvia` ahí
+es un acento secundario de uso ligero, no texto de cuerpo).
 
 La elección se recuerda en `localStorage` (`rivand-paleta`, valores `burdeos`/`original`/
 `granate`/`botella` — `burdeos` es el único que no añade clase) y se resuelve en un script

@@ -13,15 +13,22 @@
   --noche: #5C1114;
   --noche-2: #3E0B0D;
   --noche-3: #7A171A;
-  --crema: #F3EEE4;
-  --crema-2: #E8E1D3;
-  --papel: #FAF8F2;
+  /* Blanco puro: la web real de Dourado & Fernández también usa --crema:
+     #FFFFFF, no un crema cálido — así que el default (sin clase) reproduce
+     su papel tal cual, no solo su acento, para el email comparativo. El
+     --papel de aquí (tarjetas y la franja de "Opiniones") reutiliza el
+     hex exacto de su --crema-2 (#F2F0EA), la franja secundaria casi-blanca
+     de esa misma web. El cobre nativo mantiene su crema propio en
+     html.paleta-original, ver abajo. */
+  --crema: #FFFFFF;
+  --crema-2: #F2F0EA;
+  --papel: #F2F0EA;
   --cobre: #C4585C;
   --cobre-claro: #D0797D;
-  --cobre-tinta: #7A1418;      /* legible como texto sobre crema (~9,4:1) */
+  --cobre-tinta: #7A1418;      /* legible sobre crema/blanco (~10,8:1) */
   --salvia: #B2413F;
   --salvia-claro: #CD8482;     /* legible sobre noche (~4,7:1) */
-  --salvia-tinta: #742A29;     /* legible sobre crema (~8,6:1) */
+  --salvia-tinta: #742A29;     /* legible sobre crema/blanco (~10:1) */
   --tinta: #1B2430;
   --tinta-2: color-mix(in srgb, var(--tinta) 72%, var(--crema));
   --tinta-3: color-mix(in srgb, var(--tinta) 52%, var(--crema));
@@ -37,11 +44,15 @@
 
 /* -------------------------- Control de paleta --------------------------
    BLOQUE DE DEMOSTRACIÓN: se borra entero al entregar la web ya como
-   oficial (ver README, "El control de paleta"). Solo cambia el color de
-   marca — la tinta (--tinta y derivados), el papel (--crema, --papel) y
-   el resto de variables estructurales son los mismos en las cuatro paletas,
-   para que el texto siga siendo legible y el sitio no se vea "descolorido"
-   en ningún caso.
+   oficial (ver README, "El control de paleta"). La tinta (--tinta y
+   derivados) y el resto de variables estructurales son los mismos en
+   las cuatro paletas, para que el texto siga siendo legible y el sitio
+   no se vea "descolorido" en ningún caso. El papel (--crema, --crema-2,
+   --papel) es la EXCEPCIÓN desde el 2026-09-21: el bare :root (Burdeos,
+   el rojo real de Dourado & Fernández) lo lleva en blanco puro porque su
+   web real también es blanca, no crema — las otras tres paletas
+   (Original/Granate/Botella) comparten el crema cálido nativo de «Cuenta
+   atrás», ver html.paleta-original más abajo.
    Aquí, a diferencia de una plantilla con fondo claro fijo, el --noche/
    --noche-2/--noche-3 estructural también se redefine junto al acento:
    en "Cuenta atrás" el cobre es la aguja sobre un cielo nocturno, así que
@@ -53,7 +64,16 @@
    default real, sin clase). "Original" es la única paleta que necesita
    clase propia: son los valores nativos de "Cuenta atrás" (el cobre de
    antes del 2026-09-21), reubicados aquí para que sigan siendo
-   alcanzables como una opción explícita del mando. */
+   alcanzables como una opción explícita del mando. El papel nativo
+   (--crema/--crema-2/--papel de antes del 2026-09-21, el crema cálido
+   propio de "Cuenta atrás") va con ella, para no perderlo: solo el rojo
+   de Dourado & Fernández se enseña sobre SU blanco real. Granate y
+   Verde botella son opciones de acento del mando, no una réplica de
+   ningún sitio ajeno, así que se quedan en este mismo papel nativo en
+   vez de heredar el blanco del bare :root. */
+html.paleta-original, html.paleta-granate, html.paleta-botella {
+  --crema: #F3EEE4; --crema-2: #E8E1D3; --papel: #FAF8F2;
+}
 html.paleta-original {
   --noche: #1B2430; --noche-2: #141B25; --noche-3: #26313F;
   --cobre: #C08552; --cobre-claro: #D9A374; --cobre-tinta: #8A5A2B;
