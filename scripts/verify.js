@@ -403,6 +403,79 @@ function trimestreEsperado(ahora) {
     await page.close();
   }
 
+  /* ---------- 13. control de paleta (demostración) ---------- */
+  {
+    const page = await nuevaPagina(browser);
+    await page.goto(BASE, { waitUntil: 'load' });
+    await page.waitForTimeout(500);
+
+    const inicial = await page.evaluate(() => {
+      const caja = document.getElementById('paleta');
+      return {
+        visible: caja && !caja.hidden,
+        pressed: caja && document.getElementById('paleta-cobre').getAttribute('aria-pressed'),
+        cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim()
+      };
+    });
+    ok('el control de paleta se muestra con JS', inicial.visible, inicial);
+    ok('«Cobre» empieza marcado por defecto', inicial.pressed === 'true', inicial.pressed);
+
+    await page.locator('#paleta-granate').click();
+    await page.waitForTimeout(150);
+    const trasGranate = await page.evaluate(() => ({
+      clase: document.documentElement.className,
+      cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
+    }));
+    ok('al pulsar «Granate» cambia la clase y el color de marca (--cobre) computado',
+      /paleta-granate/.test(trasGranate.clase) && trasGranate.cobre.toLowerCase() !== inicial.cobre.toLowerCase(),
+      trasGranate);
+    ok('la elección de paleta se guarda en localStorage', trasGranate.guardado === 'granate', trasGranate.guardado);
+
+    await page.reload({ waitUntil: 'load' });
+    const sinFlash = await page.evaluate(() => document.documentElement.classList.contains('paleta-granate'));
+    ok('al recargar, la paleta guardada ya está puesta nada más cargar (sin flash)', sinFlash);
+
+    await page.locator('#paleta-botella').click();
+    await page.waitForTimeout(150);
+    const trasBotella = await page.evaluate(() => ({
+      clase: document.documentElement.className,
+      cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
+    }));
+    ok('«Verde botella» también cambia clase, color computado y localStorage',
+      /paleta-botella/.test(trasBotella.clase) && !/paleta-granate/.test(trasBotella.clase) &&
+      trasBotella.cobre.toLowerCase() !== trasGranate.cobre.toLowerCase() && trasBotella.guardado === 'botella',
+      trasBotella);
+    await page.screenshot({ path: path.join(CAPS, 'paleta-botella.png') });
+
+    await page.locator('#paleta-cobre').click();
+    await page.waitForTimeout(150);
+    const trasCobre = await page.evaluate(() => document.documentElement.className);
+    ok('volver a «Cobre» quita las dos clases de paleta', !/paleta-(granate|botella)/.test(trasCobre), trasCobre);
+
+    ok('sin errores de consola durante el cambio de paleta', page.errores.length === 0, page.errores);
+    await page.close();
+  }
+
+  /* ---------- 14. el mando de paleta no se solapa con el aviso de cookies ---------- */
+  {
+    const page = await nuevaPagina(browser, { viewport: { width: 375, height: 700 } });
+    await page.goto(BASE, { waitUntil: 'load' });
+    await page.waitForTimeout(500);
+    const visible = await page.locator('.cookie-banner').isVisible();
+    ok('el aviso de cookies está abierto para esta prueba', visible);
+    const rects = await page.evaluate(() => {
+      const b = document.querySelector('.cookie-banner').getBoundingClientRect();
+      const p = document.getElementById('paleta').getBoundingClientRect();
+      return { banner: { top: b.top, bottom: b.bottom }, paleta: { top: p.top, bottom: p.bottom } };
+    });
+    const solapan = rects.paleta.top < rects.banner.bottom && rects.paleta.bottom > rects.banner.top;
+    ok('el mando de paleta no se solapa con el aviso de cookies abierto', !solapan, rects);
+    await page.screenshot({ path: path.join(CAPS, 'paleta-vs-cookies-375.png') });
+    await page.close();
+  }
+
   /* ---------- informe ---------- */
   await browser.close();
   const fallos = resultados.filter(r => !r.ok);

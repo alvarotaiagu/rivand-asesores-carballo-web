@@ -30,6 +30,31 @@
   --cookie-h: 0px;     /* alto del aviso de cookies mientras está abierto; lo fija main.js */
 }
 
+/* -------------------------- Control de paleta --------------------------
+   BLOQUE DE DEMOSTRACIÓN: se borra entero al entregar la web ya como
+   oficial (ver README, "El control de paleta"). Solo cambia el color de
+   marca — la tinta (--tinta y derivados), el papel (--crema, --papel) y
+   el resto de variables estructurales son los mismos en las tres paletas,
+   para que el texto siga siendo legible y el sitio no se vea "descolorido"
+   en ningún caso.
+   Aquí, a diferencia de una plantilla con fondo claro fijo, el --noche/
+   --noche-2/--noche-3 estructural también se redefine junto al acento:
+   en "Cuenta atrás" el cobre es la aguja sobre un cielo nocturno, así que
+   pintar un acento granate o verde botella sobre un fondo azul noche
+   desentonaría, como una identidad a medio repintar. Cada paleta repinta
+   el fondo oscuro (cabecera, hero, calendario, pie) a la vez que el
+   acento, como haría una repintada de marca real. */
+html.paleta-granate {
+  --noche: #241318; --noche-2: #170C0F; --noche-3: #3A2226;
+  --cobre: #C77165; --cobre-claro: #DE9186; --cobre-tinta: #8C3226;
+  --salvia: #A9863F; --salvia-claro: #CDB06E; --salvia-tinta: #765A25;
+}
+html.paleta-botella {
+  --noche: #0F2019; --noche-2: #0A1712; --noche-3: #1E3129;
+  --cobre: #619978; --cobre-claro: #84B79A; --cobre-tinta: #296340;
+  --salvia: #B07752; --salvia-claro: #D2A784; --salvia-tinta: #855334;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
 body {
@@ -663,6 +688,37 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cookie-banner:not([hidden]) { display: flex; }
 .cookie-banner p { margin: 0; font-size: 0.8rem; line-height: 1.6; }
 .cookie-banner .btn { flex: none; }
+
+/* ---------- Control de paleta (demostración, ver nota arriba en :root) ----------
+   El aviso de cookies de este sitio va arriba (top:0), no abajo, así que
+   la píldora no necesita apartarse con --cookie-h como haría un botón de
+   WhatsApp flotante; verificado por script que nunca se solapan. */
+.paleta { display: none; }
+.paleta:not([hidden]) {
+  display: flex; position: fixed; z-index: 40; left: 1.2rem; bottom: 1.2rem;
+  align-items: center; gap: 0.6rem; background: var(--papel);
+  border: 1px solid color-mix(in srgb, var(--tinta) 16%, transparent);
+  border-radius: 999px; padding: 0.4rem 0.5rem 0.4rem 0.9rem;
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--noche) 55%, transparent);
+}
+.paleta-rotulo {
+  margin: 0; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--tinta-3);
+}
+.paleta-botones { display: flex; gap: 0.3rem; }
+.paleta-botones button {
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.03em; cursor: pointer;
+  background: transparent; color: var(--tinta-3);
+  border: 1px solid color-mix(in srgb, var(--tinta) 20%, transparent); border-radius: 999px;
+  padding: 0.34rem 0.7rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.paleta-botones button:hover { color: var(--tinta); border-color: color-mix(in srgb, var(--tinta) 40%, transparent); }
+.paleta-botones button[aria-pressed="true"] { background: var(--cobre); color: #17202B; border-color: var(--cobre); }
+@media (max-width: 480px) {
+  .paleta:not([hidden]) { left: 0.9rem; bottom: 0.9rem; padding: 0.3rem 0.4rem 0.3rem 0.7rem; }
+  .paleta-rotulo { display: none; }
+}
 
 /* ============================ DIÁLOGOS ============================ */
 

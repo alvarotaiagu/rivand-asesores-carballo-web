@@ -24,11 +24,60 @@ python -m http.server 8971
 NODE_PATH=<ruta a node_modules con playwright> node scripts/verify.js
 ```
 
-**55/55 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
+**65/65 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
 la aguja encaja en el trimestre real, el aviso de cookies cierra de verdad, el mapa no se
 carga hasta pulsarlo, reduced-motion, el sticky-stack, los contadores, 400 px sin recortes
-ni scroll lateral, la página sin JS y la honestidad de los datos (sin precios, con la
-reseña real reproducida literal, sin declarar ni insinuar ningún recuento, y con todos los marcadores de pendiente a la vista).
+ni scroll lateral, la página sin JS, la honestidad de los datos (sin precios, con la
+reseña real reproducida literal, sin declarar ni insinuar ningún recuento, y con todos los
+marcadores de pendiente a la vista) y el control de paleta de demostración (abajo).
+
+---
+
+## El control de paleta (demostración, quitar antes de dar la web por oficial)
+
+**Solo para mientras el cliente decide el color.** El 2026-09-21 Alvaro enseñó plantillas a
+un cliente real (Dourado & Fernández) y le dijo que no le gustaba el verde de su web; a raíz
+de eso se añadió a todas las plantillas de asesoría/gestoría un mando en vivo para probar
+paletas alternativas delante del cliente, sin tener que reeditar el CSS en la reunión.
+
+La píldora de abajo a la izquierda (`#paleta`) cambia en vivo entre tres paletas:
+
+| Botón | Paleta | Nota |
+|---|---|---|
+| **Cobre** | La real, marcada por defecto. `--noche` azul noche + `--cobre` cobre + `--salvia` salvia. |
+| **Granate** | Vino/granate sobre un fondo casi negro con un punto de rojo, con un dorado apagado como acento secundario (registro de sello y pan de oro). |
+| **Verde botella** | Verde ledger sobre un fondo casi negro con un punto de verde, con un terracota apagado como acento secundario. |
+
+Solo cambian el **color de marca**: `--noche`/`--noche-2`/`--noche-3` (el fondo oscuro
+estructural — se redefine junto al acento porque en «Cuenta atrás» el cobre es la aguja
+sobre un cielo nocturno, y un acento granate o verde pintado sobre un azul noche desentonaría)
+y `--cobre`/`--cobre-claro`/`--cobre-tinta`/`--salvia`/`--salvia-claro`/`--salvia-tinta`. La
+tinta, el papel (`--crema`, `--crema-2`, `--papel`) y el resto de variables estructurales son
+los mismos en las tres, para que el texto siga siendo legible en cualquiera. Los contrastes
+de las dos paletas nuevas se calcularon con la fórmula de luminancia relativa WCAG (no a ojo)
+para igualar o mejorar los de la paleta real: `--cobre-tinta` sobre `--crema` ≥5,1:1,
+`--salvia-claro` sobre `--noche` ≥5,8:1, `--salvia-tinta` sobre `--crema` ≥5,5:1.
+
+La elección se recuerda en `localStorage` (`rivand-paleta`) y se resuelve en un script
+bloqueante del `<head>`, antes de pintar, para que la página no arranque en una paleta y
+salte a otra al cargar. Comprobado por script en `scripts/verify.js` (clase aplicada, color
+`--cobre` computado distinto, persistencia en `localStorage`, ausencia de parpadeo tras
+recargar, y que la píldora no se solapa con el aviso de cookies mientras está abierto — aquí
+el aviso va arriba, no abajo, así que no necesita apartarse con `--cookie-h` como haría un
+botón de WhatsApp flotante).
+
+### Cómo quitarlo al dar la web por oficial
+
+**Esto hay que hacerlo siempre**, con el mismo criterio que cualquier otro control de
+demostración de la carpeta. Se borran cuatro cosas:
+
+1. `index.html`: el bloque `<div class="paleta" id="paleta">` (marcado con comentario) y, en
+   el `<script>` del `<head>`, el `try` que lee `rivand-paleta`.
+2. `js/main.js`: la función `initPaleta()`.
+3. `css/style.css`: el bloque «Control de paleta» de `:root` (`html.paleta-granate` /
+   `html.paleta-botella`) y el bloque `.paleta*` cerca del aviso de cookies.
+4. Confirmar con el cliente cuál de las tres paletas se queda como definitiva antes de
+   borrar las otras dos.
 
 ---
 
@@ -233,7 +282,7 @@ scripts/
   buscar_pexels.js    búsqueda + hojas de contacto para elegir fotos
   hoja_contacto.py
   process_photos.py   descarga y gradación a la paleta
-  verify.js           las 52 pruebas de Playwright
+  verify.js           las 65 pruebas de Playwright
   verify-report.json
 screenshots/
 ```

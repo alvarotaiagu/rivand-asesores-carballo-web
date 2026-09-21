@@ -157,6 +157,40 @@
     });
   })();
 
+  /* ---------------- El control de paleta ----------------
+     NO ES PARTE DEL SITIO. Es un mando para enseñar la misma web en tres
+     paletas de color delante del cliente mientras decide. Al entregar la
+     web ya como oficial se borra esta función, el bloque .paleta del CSS,
+     el <div id="paleta"> y la bandera del <head>. */
+  (function initPaleta() {
+    var caja = $("#paleta");
+    var botones = {
+      cobre: $("#paleta-cobre"),
+      granate: $("#paleta-granate"),
+      botella: $("#paleta-botella")
+    };
+    if (!caja || !botones.cobre || !botones.granate || !botones.botella) return;
+    var CLAVE_PALETA = "rivand-paleta";
+
+    caja.hidden = false; // sin JS no se enseña: no haría nada
+
+    function pintar(nombre, guardar) {
+      doc.classList.remove("paleta-granate", "paleta-botella");
+      if (nombre !== "cobre") doc.classList.add("paleta-" + nombre);
+      Object.keys(botones).forEach(function (k) {
+        botones[k].setAttribute("aria-pressed", String(k === nombre));
+      });
+      if (guardar) { try { localStorage.setItem(CLAVE_PALETA, nombre); } catch (e) {} }
+    }
+
+    var actual = doc.classList.contains("paleta-granate") ? "granate"
+      : doc.classList.contains("paleta-botella") ? "botella" : "cobre";
+    pintar(actual, false);
+    botones.cobre.addEventListener("click", function () { pintar("cobre", true); });
+    botones.granate.addEventListener("click", function () { pintar("granate", true); });
+    botones.botella.addEventListener("click", function () { pintar("botella", true); });
+  })();
+
   /* --- diálogos legales --- */
   $$("[data-dialog]").forEach(function (b) {
     b.addEventListener("click", function () {

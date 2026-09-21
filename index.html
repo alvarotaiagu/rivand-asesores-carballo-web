@@ -53,6 +53,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=1">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<script>
+/* Paleta elegida en el control de maqueta. Se resuelve aquí, antes de
+   pintar, o la página arrancaría en una paleta y saltaría a otra.
+   CONTROL DE DEMOSTRACIÓN: ver README, "El control de paleta", para
+   quitarlo al entregar la web ya como oficial. */
+try {
+  var p = localStorage.getItem('rivand-paleta');
+  if (p === 'granate' || p === 'botella') document.documentElement.classList.add('paleta-' + p);
+} catch (e) {}
+</script>
 </head>
 <body>
 
@@ -60,6 +70,21 @@
   <p>Sin cookies de terceros. Solo se guarda en tu navegador que ya viste este aviso. El mapa de Google se carga únicamente si tú lo pides.
     <button type="button" class="link-btn" data-dialog="dlg-cookies">Más detalle</button></p>
   <button class="cookie-ack btn btn-cobre" type="button"><span class="btn-inner">Entendido</span></button>
+</div>
+
+<!-- ===================== CONTROL DE PALETA =====================
+     Esto NO es parte del sitio: es un mando para enseñar la misma web con
+     tres paletas de color distintas delante del cliente, mientras decide.
+     Al entregar la web ya como oficial se borra este bloque, el bloque
+     .paleta del CSS, la función initPaleta() de main.js y la bandera del
+     <head>. Viene con [hidden]: sin JS no aparece, porque no haría nada. -->
+<div class="paleta" id="paleta" hidden>
+  <p class="paleta-rotulo">Paleta</p>
+  <div class="paleta-botones" role="group" aria-label="Paleta de color de la maqueta">
+    <button type="button" id="paleta-cobre" aria-pressed="true">Cobre</button>
+    <button type="button" id="paleta-granate" aria-pressed="false">Granate</button>
+    <button type="button" id="paleta-botella" aria-pressed="false">Verde botella</button>
+  </div>
 </div>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
