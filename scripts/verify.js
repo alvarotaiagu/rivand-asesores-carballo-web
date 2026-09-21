@@ -413,12 +413,36 @@ function trimestreEsperado(ahora) {
       const caja = document.getElementById('paleta');
       return {
         visible: caja && !caja.hidden,
-        pressed: caja && document.getElementById('paleta-cobre').getAttribute('aria-pressed'),
-        cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim()
+        pressed: caja && document.getElementById('paleta-burdeos').getAttribute('aria-pressed'),
+        clase: document.documentElement.className,
+        cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+        noche: getComputedStyle(document.documentElement).getPropertyValue('--noche').trim()
       };
     });
     ok('el control de paleta se muestra con JS', inicial.visible, inicial);
-    ok('«Cobre» empieza marcado por defecto', inicial.pressed === 'true', inicial.pressed);
+    ok('«Burdeos» (rojo de Dourado & Fernández) empieza marcado por defecto, sin clase paleta-*',
+      inicial.pressed === 'true' && !/paleta-(original|granate|botella)/.test(inicial.clase), inicial);
+    ok('el color por defecto (--cobre) es el de Dourado & Fernández',
+      inicial.cobre.toLowerCase() === '#c4585c', inicial.cobre);
+    ok('el fondo oscuro por defecto (--noche) es el de Dourado & Fernández',
+      inicial.noche.toLowerCase() === '#5c1114', inicial.noche);
+
+    await page.locator('#paleta-original').click();
+    await page.waitForTimeout(150);
+    const trasOriginal = await page.evaluate(() => ({
+      clase: document.documentElement.className,
+      cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
+    }));
+    ok('al pulsar «Cobre» (paleta nativa) cambia la clase y el color de marca (--cobre) computado',
+      /paleta-original/.test(trasOriginal.clase) && trasOriginal.cobre.toLowerCase() === '#c08552' &&
+      trasOriginal.cobre.toLowerCase() !== inicial.cobre.toLowerCase(),
+      trasOriginal);
+    ok('la elección de paleta se guarda en localStorage', trasOriginal.guardado === 'original', trasOriginal.guardado);
+
+    await page.reload({ waitUntil: 'load' });
+    const sinFlash = await page.evaluate(() => document.documentElement.classList.contains('paleta-original'));
+    ok('al recargar, la paleta guardada ya está puesta nada más cargar (sin flash)', sinFlash);
 
     await page.locator('#paleta-granate').click();
     await page.waitForTimeout(150);
@@ -428,13 +452,9 @@ function trimestreEsperado(ahora) {
       guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
     }));
     ok('al pulsar «Granate» cambia la clase y el color de marca (--cobre) computado',
-      /paleta-granate/.test(trasGranate.clase) && trasGranate.cobre.toLowerCase() !== inicial.cobre.toLowerCase(),
+      /paleta-granate/.test(trasGranate.clase) && !/paleta-original/.test(trasGranate.clase) &&
+      trasGranate.cobre.toLowerCase() !== trasOriginal.cobre.toLowerCase(),
       trasGranate);
-    ok('la elección de paleta se guarda en localStorage', trasGranate.guardado === 'granate', trasGranate.guardado);
-
-    await page.reload({ waitUntil: 'load' });
-    const sinFlash = await page.evaluate(() => document.documentElement.classList.contains('paleta-granate'));
-    ok('al recargar, la paleta guardada ya está puesta nada más cargar (sin flash)', sinFlash);
 
     await page.locator('#paleta-botella').click();
     await page.waitForTimeout(150);
@@ -449,10 +469,17 @@ function trimestreEsperado(ahora) {
       trasBotella);
     await page.screenshot({ path: path.join(CAPS, 'paleta-botella.png') });
 
-    await page.locator('#paleta-cobre').click();
+    await page.locator('#paleta-burdeos').click();
     await page.waitForTimeout(150);
-    const trasCobre = await page.evaluate(() => document.documentElement.className);
-    ok('volver a «Cobre» quita las dos clases de paleta', !/paleta-(granate|botella)/.test(trasCobre), trasCobre);
+    const trasBurdeos = await page.evaluate(() => ({
+      clase: document.documentElement.className,
+      cobre: getComputedStyle(document.documentElement).getPropertyValue('--cobre').trim(),
+      guardado: (() => { try { return localStorage.getItem('rivand-paleta'); } catch (e) { return null; } })()
+    }));
+    ok('volver a «Burdeos» quita las tres clases de paleta y recupera el rojo por defecto',
+      !/paleta-(original|granate|botella)/.test(trasBurdeos.clase) &&
+      trasBurdeos.cobre.toLowerCase() === inicial.cobre.toLowerCase() && trasBurdeos.guardado === 'burdeos',
+      trasBurdeos);
 
     ok('sin errores de consola durante el cambio de paleta', page.errores.length === 0, page.errores);
     await page.close();

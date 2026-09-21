@@ -24,7 +24,7 @@ python -m http.server 8971
 NODE_PATH=<ruta a node_modules con playwright> node scripts/verify.js
 ```
 
-**65/65 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
+**68/68 pruebas pasan.** El informe queda en `scripts/verify-report.json`. Cubre:
 la aguja encaja en el trimestre real, el aviso de cookies cierra de verdad, el mapa no se
 carga hasta pulsarlo, reduced-motion, el sticky-stack, los contadores, 400 px sin recortes
 ni scroll lateral, la página sin JS, la honestidad de los datos (sin precios, con la
@@ -35,16 +35,22 @@ marcadores de pendiente a la vista) y el control de paleta de demostración (aba
 
 ## El control de paleta (demostración, quitar antes de dar la web por oficial)
 
-**Solo para mientras el cliente decide el color.** El 2026-09-21 Alvaro enseñó plantillas a
-un cliente real (Dourado & Fernández) y le dijo que no le gustaba el verde de su web; a raíz
-de eso se añadió a todas las plantillas de asesoría/gestoría un mando en vivo para probar
-paletas alternativas delante del cliente, sin tener que reeditar el CSS en la reunión.
+**Historial:** el 2026-09-21 Alvaro enseñó plantillas a un cliente real (Dourado & Fernández)
+y se añadió a todas las plantillas de asesoría/gestoría un mando en vivo para probar paletas
+alternativas delante del cliente, sin tener que reeditar el CSS en la reunión. Ese mismo día,
+más tarde, cambió el motivo: las 7 plantillas de asesoría/gestoría de la carpeta se le mandan
+por email a Dourado & Fernández para que elijan **estructura**, no color — así que el color
+dejó de ser una variable y el **rojo real de Dourado & Fernández pasó a ser el default** en
+las siete, esta incluida, para que abran ya en el color que el cliente ya usa en su propia
+web (`--verde`/`--oro`/`--oro-tinta` de `dourado-fernandez-asesores-carballo-web`). El cobre
+nativo de «Cuenta atrás» no desaparece: sigue siendo una opción más del mando.
 
-La píldora de abajo a la izquierda (`#paleta`) cambia en vivo entre tres paletas:
+La píldora de abajo a la izquierda (`#paleta`) cambia en vivo entre cuatro paletas:
 
 | Botón | Paleta | Nota |
 |---|---|---|
-| **Cobre** | La real, marcada por defecto. `--noche` azul noche + `--cobre` cobre + `--salvia` salvia. |
+| **Burdeos** | **El default** (sin clase `paleta-*`, es el `:root` de base). El rojo real de Dourado & Fernández: `--noche` casi negro-granate + `--cobre` rojo saturado + `--salvia` derivado del mismo rojo. |
+| **Cobre** | La paleta nativa de «Cuenta atrás» — azul noche + cobre + salvia —, reubicada en `html.paleta-original`. |
 | **Granate** | Vino/granate sobre un fondo casi negro con un punto de rojo, con un dorado apagado como acento secundario (registro de sello y pan de oro). |
 | **Verde botella** | Verde ledger sobre un fondo casi negro con un punto de verde, con un terracota apagado como acento secundario. |
 
@@ -53,15 +59,21 @@ estructural — se redefine junto al acento porque en «Cuenta atrás» el cobre
 sobre un cielo nocturno, y un acento granate o verde pintado sobre un azul noche desentonaría)
 y `--cobre`/`--cobre-claro`/`--cobre-tinta`/`--salvia`/`--salvia-claro`/`--salvia-tinta`. La
 tinta, el papel (`--crema`, `--crema-2`, `--papel`) y el resto de variables estructurales son
-los mismos en las tres, para que el texto siga siendo legible en cualquiera. Los contrastes
-de las dos paletas nuevas se calcularon con la fórmula de luminancia relativa WCAG (no a ojo)
-para igualar o mejorar los de la paleta real: `--cobre-tinta` sobre `--crema` ≥5,1:1,
-`--salvia-claro` sobre `--noche` ≥5,8:1, `--salvia-tinta` sobre `--crema` ≥5,5:1.
+los mismos en las cuatro, para que el texto siga siendo legible en cualquiera. Los contrastes de las dos paletas de demostración (granate/botella) se calcularon con la
+fórmula de luminancia relativa WCAG (no a ojo) para igualar o mejorar los de la paleta nativa:
+`--cobre-tinta` sobre `--crema` ≥5,1:1, `--salvia-claro` sobre `--noche` ≥5,8:1, `--salvia-tinta`
+sobre `--crema` ≥5,5:1. El rojo de Dourado & Fernández usa sus propios hex reales (no se
+inventaron), verificados igual: `--cobre-tinta` ≈9,4:1 y `--salvia-tinta` ≈8,6:1 sobre
+`--crema` (mejor que la paleta nativa), y `--salvia-claro` ≈4,7:1 sobre `--noche` (algo por
+debajo de las otras paletas — `--salvia` ahí es un acento secundario de uso ligero, no texto
+de cuerpo).
 
-La elección se recuerda en `localStorage` (`rivand-paleta`) y se resuelve en un script
+La elección se recuerda en `localStorage` (`rivand-paleta`, valores `burdeos`/`original`/
+`granate`/`botella` — `burdeos` es el único que no añade clase) y se resuelve en un script
 bloqueante del `<head>`, antes de pintar, para que la página no arranque en una paleta y
-salte a otra al cargar. Comprobado por script en `scripts/verify.js` (clase aplicada, color
-`--cobre` computado distinto, persistencia en `localStorage`, ausencia de parpadeo tras
+salte a otra al cargar. Comprobado por script en `scripts/verify.js` (el default sin clase
+es el rojo de Dourado, `--cobre`/`--noche` computados con su hex exacto, clase aplicada al
+elegir cada una de las otras tres, persistencia en `localStorage`, ausencia de parpadeo tras
 recargar, y que la píldora no se solapa con el aviso de cookies mientras está abierto — aquí
 el aviso va arriba, no abajo, así que no necesita apartarse con `--cookie-h` como haría un
 botón de WhatsApp flotante).
@@ -74,10 +86,13 @@ demostración de la carpeta. Se borran cuatro cosas:
 1. `index.html`: el bloque `<div class="paleta" id="paleta">` (marcado con comentario) y, en
    el `<script>` del `<head>`, el `try` que lee `rivand-paleta`.
 2. `js/main.js`: la función `initPaleta()`.
-3. `css/style.css`: el bloque «Control de paleta» de `:root` (`html.paleta-granate` /
-   `html.paleta-botella`) y el bloque `.paleta*` cerca del aviso de cookies.
-4. Confirmar con el cliente cuál de las tres paletas se queda como definitiva antes de
-   borrar las otras dos.
+3. `css/style.css`: el bloque «Control de paleta» de `:root` (`html.paleta-original` /
+   `html.paleta-granate` / `html.paleta-botella`) y el bloque `.paleta*` cerca del aviso de
+   cookies. Si el rojo de Dourado & Fernández se queda como color definitivo, el `:root` de
+   base ya vale tal cual (es lo que hay que confirmar con el cliente primero); si gana otra
+   paleta, hay que volcar sus valores al `:root` de base antes de borrar los bloques `html.paleta-*`.
+4. Confirmar con el cliente cuál de las cuatro paletas se queda como definitiva antes de
+   borrar las otras tres.
 
 ---
 

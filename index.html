@@ -56,11 +56,13 @@
 <script>
 /* Paleta elegida en el control de maqueta. Se resuelve aquí, antes de
    pintar, o la página arrancaría en una paleta y saltaría a otra.
-   CONTROL DE DEMOSTRACIÓN: ver README, "El control de paleta", para
-   quitarlo al entregar la web ya como oficial. */
+   El default real (sin clase) es el rojo de Dourado & Fernández: ver
+   css/style.css, bloque «Control de paleta», y README, "El control de
+   paleta". CONTROL DE DEMOSTRACIÓN: quitarlo al entregar la web ya como
+   oficial. */
 try {
   var p = localStorage.getItem('rivand-paleta');
-  if (p === 'granate' || p === 'botella') document.documentElement.classList.add('paleta-' + p);
+  if (p === 'original' || p === 'granate' || p === 'botella') document.documentElement.classList.add('paleta-' + p);
 } catch (e) {}
 </script>
 </head>
@@ -74,14 +76,20 @@ try {
 
 <!-- ===================== CONTROL DE PALETA =====================
      Esto NO es parte del sitio: es un mando para enseñar la misma web con
-     tres paletas de color distintas delante del cliente, mientras decide.
-     Al entregar la web ya como oficial se borra este bloque, el bloque
-     .paleta del CSS, la función initPaleta() de main.js y la bandera del
-     <head>. Viene con [hidden]: sin JS no aparece, porque no haría nada. -->
+     cuatro paletas de color distintas delante del cliente, mientras decide.
+     El default («Burdeos») es el rojo real de Dourado & Fernández — desde
+     2026-09-21 esta web se manda por email junto a sus 6 hermanas para que
+     el cliente compare estructura, no color, así que todas abren ya en su
+     rojo. «Cobre» es la paleta nativa de «Cuenta atrás», reubicada como
+     una opción más. Al entregar la web ya como oficial se borra este
+     bloque, el bloque .paleta del CSS, la función initPaleta() de main.js
+     y la bandera del <head>. Viene con [hidden]: sin JS no aparece, porque
+     no haría nada. -->
 <div class="paleta" id="paleta" hidden>
   <p class="paleta-rotulo">Paleta</p>
   <div class="paleta-botones" role="group" aria-label="Paleta de color de la maqueta">
-    <button type="button" id="paleta-cobre" aria-pressed="true">Cobre</button>
+    <button type="button" id="paleta-burdeos" aria-pressed="true">Burdeos</button>
+    <button type="button" id="paleta-original" aria-pressed="false">Cobre</button>
     <button type="button" id="paleta-granate" aria-pressed="false">Granate</button>
     <button type="button" id="paleta-botella" aria-pressed="false">Verde botella</button>
   </div>

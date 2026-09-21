@@ -158,35 +158,43 @@
   })();
 
   /* ---------------- El control de paleta ----------------
-     NO ES PARTE DEL SITIO. Es un mando para enseñar la misma web en tres
+     NO ES PARTE DEL SITIO. Es un mando para enseñar la misma web en cuatro
      paletas de color delante del cliente mientras decide. Al entregar la
      web ya como oficial se borra esta función, el bloque .paleta del CSS,
-     el <div id="paleta"> y la bandera del <head>. */
+     el <div id="paleta"> y la bandera del <head>.
+     "Burdeos" (rojo de Dourado & Fernández) es el default real: el bare
+     :root de css/style.css YA es ese rojo, así que "burdeos" es el único
+     nombre que NO añade clase — es el estado "ninguna clase puesta". Los
+     otros tres ("original" = cobre nativo, "granate", "botella") sí
+     añaden su clase html.paleta-*. */
   (function initPaleta() {
     var caja = $("#paleta");
     var botones = {
-      cobre: $("#paleta-cobre"),
+      burdeos: $("#paleta-burdeos"),
+      original: $("#paleta-original"),
       granate: $("#paleta-granate"),
       botella: $("#paleta-botella")
     };
-    if (!caja || !botones.cobre || !botones.granate || !botones.botella) return;
+    if (!caja || !botones.burdeos || !botones.original || !botones.granate || !botones.botella) return;
     var CLAVE_PALETA = "rivand-paleta";
 
     caja.hidden = false; // sin JS no se enseña: no haría nada
 
     function pintar(nombre, guardar) {
-      doc.classList.remove("paleta-granate", "paleta-botella");
-      if (nombre !== "cobre") doc.classList.add("paleta-" + nombre);
+      doc.classList.remove("paleta-original", "paleta-granate", "paleta-botella");
+      if (nombre !== "burdeos") doc.classList.add("paleta-" + nombre);
       Object.keys(botones).forEach(function (k) {
         botones[k].setAttribute("aria-pressed", String(k === nombre));
       });
       if (guardar) { try { localStorage.setItem(CLAVE_PALETA, nombre); } catch (e) {} }
     }
 
-    var actual = doc.classList.contains("paleta-granate") ? "granate"
-      : doc.classList.contains("paleta-botella") ? "botella" : "cobre";
+    var actual = doc.classList.contains("paleta-original") ? "original"
+      : doc.classList.contains("paleta-granate") ? "granate"
+      : doc.classList.contains("paleta-botella") ? "botella" : "burdeos";
     pintar(actual, false);
-    botones.cobre.addEventListener("click", function () { pintar("cobre", true); });
+    botones.burdeos.addEventListener("click", function () { pintar("burdeos", true); });
+    botones.original.addEventListener("click", function () { pintar("original", true); });
     botones.granate.addEventListener("click", function () { pintar("granate", true); });
     botones.botella.addEventListener("click", function () { pintar("botella", true); });
   })();

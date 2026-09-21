@@ -5,18 +5,23 @@
    marcos circulares (esferas), nunca en columnas ni tablas. */
 
 :root {
-  --noche: #1B2430;
-  --noche-2: #141B25;
-  --noche-3: #26313F;
+  /* Rojo de Dourado & Fernández (ver bloque de paleta más abajo): es el
+     que se ve al cargar sin localStorage, porque el 2026-09-21 esta web
+     se manda por email junto a sus 6 hermanas para que el cliente elija
+     ESTRUCTURA, no color — así todas abren ya en el rojo que él mismo
+     usa en su propia web y el color deja de ser una variable. */
+  --noche: #5C1114;
+  --noche-2: #3E0B0D;
+  --noche-3: #7A171A;
   --crema: #F3EEE4;
   --crema-2: #E8E1D3;
   --papel: #FAF8F2;
-  --cobre: #C08552;
-  --cobre-claro: #D9A374;
-  --cobre-tinta: #8A5A2B;      /* cobre legible como texto sobre crema (5,1:1) */
-  --salvia: #7C8B75;
-  --salvia-claro: #93A28C;     /* salvia legible sobre noche (5,8:1) */
-  --salvia-tinta: #55624F;     /* salvia legible sobre crema (5,5:1) */
+  --cobre: #C4585C;
+  --cobre-claro: #D0797D;
+  --cobre-tinta: #7A1418;      /* legible como texto sobre crema (~9,4:1) */
+  --salvia: #B2413F;
+  --salvia-claro: #CD8482;     /* legible sobre noche (~4,7:1) */
+  --salvia-tinta: #742A29;     /* legible sobre crema (~8,6:1) */
   --tinta: #1B2430;
   --tinta-2: color-mix(in srgb, var(--tinta) 72%, var(--crema));
   --tinta-3: color-mix(in srgb, var(--tinta) 52%, var(--crema));
@@ -34,7 +39,7 @@
    BLOQUE DE DEMOSTRACIÓN: se borra entero al entregar la web ya como
    oficial (ver README, "El control de paleta"). Solo cambia el color de
    marca — la tinta (--tinta y derivados), el papel (--crema, --papel) y
-   el resto de variables estructurales son los mismos en las tres paletas,
+   el resto de variables estructurales son los mismos en las cuatro paletas,
    para que el texto siga siendo legible y el sitio no se vea "descolorido"
    en ningún caso.
    Aquí, a diferencia de una plantilla con fondo claro fijo, el --noche/
@@ -43,7 +48,17 @@
    pintar un acento granate o verde botella sobre un fondo azul noche
    desentonaría, como una identidad a medio repintar. Cada paleta repinta
    el fondo oscuro (cabecera, hero, calendario, pie) a la vez que el
-   acento, como haría una repintada de marca real. */
+   acento, como haría una repintada de marca real.
+   El bare :root de arriba YA ES el rojo de Dourado & Fernández (el
+   default real, sin clase). "Original" es la única paleta que necesita
+   clase propia: son los valores nativos de "Cuenta atrás" (el cobre de
+   antes del 2026-09-21), reubicados aquí para que sigan siendo
+   alcanzables como una opción explícita del mando. */
+html.paleta-original {
+  --noche: #1B2430; --noche-2: #141B25; --noche-3: #26313F;
+  --cobre: #C08552; --cobre-claro: #D9A374; --cobre-tinta: #8A5A2B;
+  --salvia: #7C8B75; --salvia-claro: #93A28C; --salvia-tinta: #55624F;
+}
 html.paleta-granate {
   --noche: #241318; --noche-2: #170C0F; --noche-3: #3A2226;
   --cobre: #C77165; --cobre-claro: #DE9186; --cobre-tinta: #8C3226;
@@ -705,7 +720,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   margin: 0; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--tinta-3);
 }
-.paleta-botones { display: flex; gap: 0.3rem; }
+.paleta-botones { display: flex; flex-wrap: wrap; gap: 0.3rem; max-width: 13rem; }
 .paleta-botones button {
   font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.03em; cursor: pointer;
   background: transparent; color: var(--tinta-3);

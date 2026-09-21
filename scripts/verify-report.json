@@ -1,6 +1,6 @@
 {
- "fecha": "2026-09-21T12:40:42.320Z",
- "total": 65,
+ "fecha": "2026-09-21T13:26:12.831Z",
+ "total": 68,
  "fallos": 0,
  "resultados": [
   {
@@ -51,8 +51,8 @@
    "ok": true,
    "detalle": [
     {
-     "inicio": 157,
-     "dur": 126
+     "inicio": 238,
+     "dur": 146
     }
    ]
   },
@@ -197,8 +197,8 @@
    "prueba": "el marquee de trimestres se mueve",
    "ok": true,
    "detalle": {
-    "x1": "matrix(1, 0, 0, 1, -27.5941, 0)",
-    "x2": "matrix(1, 0, 0, 1, -46.1932, 0)"
+    "x1": "matrix(1, 0, 0, 1, -42.2337, 0)",
+    "x2": "matrix(1, 0, 0, 1, -61.1577, 0)"
    }
   },
   {
@@ -399,13 +399,50 @@
    "detalle": {
     "visible": true,
     "pressed": "true",
-    "cobre": "#C08552"
+    "clase": "js gsap lenis",
+    "cobre": "#C4585C",
+    "noche": "#5C1114"
    }
   },
   {
-   "prueba": "«Cobre» empieza marcado por defecto",
+   "prueba": "«Burdeos» (rojo de Dourado & Fernández) empieza marcado por defecto, sin clase paleta-*",
    "ok": true,
-   "detalle": "true"
+   "detalle": {
+    "visible": true,
+    "pressed": "true",
+    "clase": "js gsap lenis",
+    "cobre": "#C4585C",
+    "noche": "#5C1114"
+   }
+  },
+  {
+   "prueba": "el color por defecto (--cobre) es el de Dourado & Fernández",
+   "ok": true,
+   "detalle": "#C4585C"
+  },
+  {
+   "prueba": "el fondo oscuro por defecto (--noche) es el de Dourado & Fernández",
+   "ok": true,
+   "detalle": "#5C1114"
+  },
+  {
+   "prueba": "al pulsar «Cobre» (paleta nativa) cambia la clase y el color de marca (--cobre) computado",
+   "ok": true,
+   "detalle": {
+    "clase": "js gsap lenis paleta-original",
+    "cobre": "#C08552",
+    "guardado": "original"
+   }
+  },
+  {
+   "prueba": "la elección de paleta se guarda en localStorage",
+   "ok": true,
+   "detalle": "original"
+  },
+  {
+   "prueba": "al recargar, la paleta guardada ya está puesta nada más cargar (sin flash)",
+   "ok": true,
+   "detalle": null
   },
   {
    "prueba": "al pulsar «Granate» cambia la clase y el color de marca (--cobre) computado",
@@ -417,16 +454,6 @@
    }
   },
   {
-   "prueba": "la elección de paleta se guarda en localStorage",
-   "ok": true,
-   "detalle": "granate"
-  },
-  {
-   "prueba": "al recargar, la paleta guardada ya está puesta nada más cargar (sin flash)",
-   "ok": true,
-   "detalle": null
-  },
-  {
    "prueba": "«Verde botella» también cambia clase, color computado y localStorage",
    "ok": true,
    "detalle": {
@@ -436,9 +463,13 @@
    }
   },
   {
-   "prueba": "volver a «Cobre» quita las dos clases de paleta",
+   "prueba": "volver a «Burdeos» quita las tres clases de paleta y recupera el rojo por defecto",
    "ok": true,
-   "detalle": "js gsap lenis"
+   "detalle": {
+    "clase": "js gsap lenis",
+    "cobre": "#C4585C",
+    "guardado": "burdeos"
+   }
   },
   {
    "prueba": "sin errores de consola durante el cambio de paleta",
@@ -459,7 +490,7 @@
      "bottom": 159.15625
     },
     "paleta": {
-     "top": 644.03125,
+     "top": 609.25,
      "bottom": 685.609375
     }
    }
